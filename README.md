@@ -30,6 +30,16 @@ Automate the process of building and deploying a Java application using a Jenkin
 
 Download jenkins.war: https://www.jenkins.io/download
 
+## To Run Jenkins in your Docker Container
+docker run -d ^
+--name jenkins ^
+-p 8080:8080 ^
+-p 50000:50000 ^
+-u root ^
+-v jenkins_home:/var/jenkins_home ^
+-v //var/run/docker.sock:/var/run/docker.sock ^
+jenkins-docker
+
 
 # Clone the project
 git clone https://github.com/your-username/jenkins-java-app.git
